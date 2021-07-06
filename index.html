@@ -14,9 +14,24 @@
     <main>
       <form class="content">
         <label for="height">Height</label>
-        <input type="text" name="height" id="height" />
+        <input
+          type="number"
+          min="0"
+          step="0.01"
+          name="height"
+          id="height"
+          required
+          autocomplete="off"
+        />
         <label for="weight">Weight</label>
-        <input type="text" name="weight" id="weight" />
+        <input
+          type="number"
+          step="0.01"
+          name="weight"
+          id="weight"
+          required
+          autocomplete="off"
+        />
         <button type="submit">Calculate</button>
       </form>
       <p class="text"></p>
