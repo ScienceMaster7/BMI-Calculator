@@ -1,11 +1,17 @@
 const formElement = document.querySelector(".content");
 const pElement = document.querySelector(".text");
 
+const mainElement = document.querySelector("main");
+const divContainer = document.createElement("div");
+divContainer.classList.add("list-container");
+mainElement.append(divContainer);
+
 formElement.addEventListener("submit", (event) => {
   event.preventDefault();
   let height = formElement.height.value;
   let weight = formElement.weight.value;
   let bmi = weight / height ** 2;
+  let name = formElement.name.value;
 
   pElement.textContent = "Your Body Mass Index is " + bmi.toFixed(2);
 

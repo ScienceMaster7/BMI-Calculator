@@ -19,3 +19,13 @@ h1 {
 body {
   background-color: beige;
 }
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container__item {
+  display: flex;
+  flex-direction: row;
+}
