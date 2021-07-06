@@ -11,8 +11,6 @@ let counter = 0;
 formElement.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  counter++;
-
   //variables that store the value of the input.
   const height = formElement.height.value;
   const weight = formElement.weight.value;
@@ -61,12 +59,27 @@ formElement.addEventListener("submit", (event) => {
   listItem.append(deleteItem);
 
   // appending the list item to the parent container.
-  divContainer.append(listItem);
+  divContainer.prepend(listItem);
 
   // If the delete button is clicked this list item is removed.
   listItem.addEventListener("click", (event) => {
     listItem.remove(listItem);
   });
+
+  // counts how often the calculate button has been clicked.
+  counter++;
+
+  /* Conditional to check if the calculate button has been clicked 
+  for the first time and then creates and styles the delete all button*/
+  if (counter === 1) {
+    const deleteAll = document.createElement("button");
+    deleteAll.textContent = "Delete All";
+    deleteAll.style.backgroundColor = "red";
+    deleteAll.style.fontStyle = "bold";
+    deleteAll.classList.add("deleteAll");
+
+    divContainer.append(deleteAll);
+  }
 
   // reseting the form if the Calculate button is clicked.
   formElement.reset();
