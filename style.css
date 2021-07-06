@@ -28,4 +28,10 @@ body {
 .container__item {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  background-color: whitesmoke;
+}
+
+.container__item:nth-child(2n) {
+  background-color: grey;
 }
