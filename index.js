@@ -6,7 +6,11 @@ const divContainer = document.createElement("div");
 divContainer.classList.add("list-container");
 mainElement.append(divContainer);
 
+let counter = 0;
+
 formElement.addEventListener("submit", (event) => {
+  counter++;
+  console.log(counter);
   event.preventDefault();
   const height = formElement.height.value;
   const weight = formElement.weight.value;
@@ -27,19 +31,15 @@ formElement.addEventListener("submit", (event) => {
   if (bmi < 18.5) {
     p3.textContent = "under-weight";
     p3.style.color = "red";
-    console.log(1);
   } else if (18.5 < bmi && bmi < 25) {
     p3.textContent = "normal";
     p3.style.color = "green";
-    console.log(2);
   } else if (25 < bmi && bmi < 30) {
     p3.textContent = "obese";
     p3.style.color = "orange";
-    console.log(3);
   } else {
     p3.textContent = "over-weight";
     p3.style.color = "red";
-    console.log(4);
   }
 
   deleteItem.textContent = "delete";
